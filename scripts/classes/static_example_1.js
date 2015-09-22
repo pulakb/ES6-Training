@@ -39,8 +39,8 @@ person.sayName();
 /*
 * The PersonClass definition defines a single static method called create() by adding the static keyword.
 
- You can use the static keyword on any method or accessor property definition within a class. The only restriction
+ You can use the static keyword on any method or accessor property definition within a classes. The only restriction
  is that you cannot use static with the constructor method definition.
 
- Just as with other class members, static members are not enumerable by default.
+ Just as with other classes members, static members are not enumerable by default.
 * */

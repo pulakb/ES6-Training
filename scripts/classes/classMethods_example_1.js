@@ -23,4 +23,4 @@ class Square extends Rectangle {
 var square = new Square(10, 10);
 console.log(square.getArea());              // 100
 
-// Overriding Parent class method
+// Overriding Parent classes method

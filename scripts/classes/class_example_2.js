@@ -15,11 +15,11 @@ console.log(person instanceof PersonType);  // true
 console.log(person instanceof Object);      // true
 */
 
-// ES6
+// ES6 - Class Expression
 
 
 
-class PersonClass {
+let PersonClass = class {
     constructor (name) {
         this.name = name;
     }
@@ -27,7 +27,7 @@ class PersonClass {
     sayName() {
         console.log(this.name);
     }
-}
+};
 
 let person = new PersonClass('Jon');
 person.sayName();
@@ -40,16 +40,11 @@ console.log(typeof PersonClass.prototype.sayName);
 
 /*
  *
- Class declarations, unlike function declarations, are not hoisted. Class declarations act like let declarations
- and so exist in the temporal dead zone until execution reaches the declaration.
+ Classes and functions are similar in that they have two forms: declarations and expressions.
+ Function and classes declarations begin with an appropriate keyword (function or classes, respectively)
+ followed by an identifier. Functions have an expression form that doesn't require an identifier after
+ function, and similarly, classes have an expression form that doesn't require an identifier after classes.
 
- All code inside of class declarations runs in strict mode automatically. There's no way to opt-out of strict
- mode inside of classes.
-
- All methods are non-enumerable. This is a significant change from custom types, where you need to use
- Object.defineProperty() to make a method non-enumerable.
-
- Calling the class constructor without new throws an error.
-
- Attempting to overwrite the class name within a class method throws an error.
+ These classes expressions are designed to be used in variable declarations or passed into functions as arguments.
+ Here's the classes expression equivalent of the previous examples:
  */

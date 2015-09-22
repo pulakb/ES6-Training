@@ -19,8 +19,8 @@ let person = new class {
 person.sayName();       // "Nicholas"
 
 /*
-* Here, the anonymous class expression is created and then executed immediately. This pattern allows you
-* to use the class syntax for creating singletons without leaving a class reference available for inspection.
+* Here, the anonymous classes expression is created and then executed immediately. This pattern allows you
+* to use the classes syntax for creating singletons without leaving a classes reference available for inspection.
 * The parentheses at the end are the indicator that you're calling a function while also allowing you to pass
 * in an argument.
 * */
