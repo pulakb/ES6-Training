@@ -1,30 +1,26 @@
-// export data
-export var color = "red";
-export let name = "Nicholas";
-export const magicNumber = 7;
+import { Rectangle } from "./module_example_1.js";
+import { sum, multiply } from "./module_example_1.js";
 
-// export function
-export function sum(num1, num2) {
-    return num1 + num1;
-}
+import { bhag } from "./module_example_1.js";
 
-// export class
-export class Rectangle {
-    constructor(length, width) {
-        this.length = length;
-        this.width = width;
-    }
-}
+let area = new Rectangle(10, 7).getArea();
+console.log(area);
 
-// this function is private to the module
-function subtract(num1, num2) {
-    return num1 - num2;
-}
+console.log(sum(10, 9));
+console.log(multiply(10, 9));
 
-// define a function
-function multiply(num1, num2) {
-    return num1 * num2;
-}
+console.log (bhag(10, 2));
 
-// export later
-export multiply;
+/*
+* Keep in mind that the code inside of a module will only ever be executed once, regardless of the number
+* of times it's used in an import statement. Consider the following:
+
+ import { sum } from "example";
+ import { multiply } from "example";
+ import { magicNumber } from "example";
+ Even though there are three import statements in this module, the code in "example" will only be executed once.
+ The instantiated module is then kept in memory and reused whenever another import statement references it.
+ It doesn't matter if the import statements are all in the module, or are spread across multiple
+ modules - they each will use the same module instance.
+*
+* */
