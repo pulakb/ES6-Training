@@ -14,7 +14,7 @@ gulp.task("other", function () {
 
 // For Running ES6 Modules
 gulp.task('babelify', function() {
-    browserify({ entries: './scripts/modules/test_module_example_1.js', debug: true })
+    browserify({ entries: './scripts/modules/test_module_example_2.js', debug: true })
         .transform(babelify)
         .bundle()
         .pipe(source('bundle.js'))
