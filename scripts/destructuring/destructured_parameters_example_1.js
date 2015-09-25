@@ -1,28 +1,29 @@
-var options = {
-    repeat: true,
-    save: false,
-    colors: [ "red", "green", "blue" ]
-};
+/*function setCookie (name , value, options) {
+    console.log(name);
+    console.log(value);
+    console.log(options);
+}*/
 
-var { repeat, save, colors: [ firstColor, secondColor ]} = options;
+function setCookie (name , value, {secure, path, domain, expires} = {}) {
+    console.log(name);
+    console.log(value);
+    console.log(secure);
+    console.log(path);
+    console.log(domain);
+    console.log(expires);
+}
 
-console.log(repeat);            // true
-console.log(save);              // false
-console.log(firstColor);        // "red"
-console.log(secondColor);       // "green"
-
-
-var { repeat, save, colors } = options;
-
-console.log(repeat);                        // true
-console.log(save);                          // false
-console.log(colors);                        // "red,green,blue"
-console.log(colors === options.colors);     // true
+setCookie('city', 'blr', {
+    "secure": true,
+    "expires": 5000
+});
 
 /*
-* This modified example retrieves options.colors and stores it in the colors variable.
-* Notice that colors is a direct reference to options.colors and not a copy.
+* Destructuring makes it easier to work with objects and arrays in JavaScript. Using syntax that's
+* already familiar to many developers, object literals and array literals, you can now pick data
+* structures apart to get at just the information you're interested in.
 
- Mixed destructuring is very useful for pulling values out of JSON configuration structures
- without navigating the entire structure.
+ Destructured parameters use the destructuring syntax to make options objects more transparent when
+ used as function parameters. The actual data you're interested in can be listed out along with
+ other named parameters.
 * */

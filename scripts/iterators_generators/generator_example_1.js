@@ -7,8 +7,6 @@
 *
 * */
 
-require("babel/polyfill");
-
 function *createIterator() {
     yield 1;
     yield 2;

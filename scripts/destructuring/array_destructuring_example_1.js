@@ -1,28 +1,17 @@
-let options = {
-    repeat: true,
-    save: false,
-    rules: {
-        custom: 10
-    }
-};
+var colors = [ "red", "green", "blue" ];
 
-// form - 1
-var { repeat: localRepeat, save: localSave } = options;
+// later
 
-// form -2
-var { repeat, save } = options;
+var [ firstColor, secondColor ] = colors;
 
-// form - 3
-var { repeat, save, rules: {custom} } = options;
-/*
-* In this example, the custom property is embedded in another object. The extra set of curly braces
-* allows you to descend into a nested object and pull out its properties.
-* */
+console.log(firstColor);        // "red"
+console.log(secondColor);       // "green"
 
-console.log(localRepeat);
-console.log(localSave);
+var colors = [ "red", [ "green", "lightgreen" ], "blue" ];
 
-console.log(repeat);
-console.log(save);
+// later
 
-console.log(custom);
+var [ firstColor, [ secondColor ] ] = colors;
+
+console.log(firstColor);        // "red"
+console.log(secondColor);       // "green"

@@ -1,6 +1,9 @@
 var gulp = require('gulp');
 var babel = require('gulp-babel');
 
+//For running Generator Examples
+var regenerator = require('gulp-regenerator');
+
 // For Running ES6 Modules
 var babelify = require('babelify');
 var source = require('vinyl-source-stream');
@@ -19,4 +22,11 @@ gulp.task('babelify', function() {
         .bundle()
         .pipe(source('bundle.js'))
         .pipe(gulp.dest('dist/modules/'));
+});
+
+//For running Generator Examples
+gulp.task("generator", function () {
+    return gulp.src("scripts/iterators_generators/*.js")
+        .pipe(regenerator({includeRuntime: true}))
+        .pipe(gulp.dest('dist/iterators_generators/'))
 });

@@ -1,17 +1,28 @@
-var colors = [ "red", "green", "blue" ];
+var options = {
+    repeat: true,
+    save: false,
+    colors: [ "red", "green", "blue" ]
+};
 
-// later
+var { repeat, save, colors: [ firstColor, secondColor ]} = options;
 
-var [ firstColor, secondColor ] = colors;
-
+console.log(repeat);            // true
+console.log(save);              // false
 console.log(firstColor);        // "red"
 console.log(secondColor);       // "green"
 
-var colors = [ "red", [ "green", "lightgreen" ], "blue" ];
 
-// later
+var { repeat, save, colors } = options;
 
-var [ firstColor, [ secondColor ] ] = colors;
+console.log(repeat);                        // true
+console.log(save);                          // false
+console.log(colors);                        // "red,green,blue"
+console.log(colors === options.colors);     // true
 
-console.log(firstColor);        // "red"
-console.log(secondColor);       // "green"
+/*
+* This modified example retrieves options.colors and stores it in the colors variable.
+* Notice that colors is a direct reference to options.colors and not a copy.
+
+ Mixed destructuring is very useful for pulling values out of JSON configuration structures
+ without navigating the entire structure.
+* */
