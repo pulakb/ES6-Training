@@ -1,20 +1,22 @@
+function *createIterator(items) {
+    for (let i = 0; i < items.length; i++) {
+        yield items[i];
+    }
+}
+
+let iterator = createIterator([1,2,3]);
+
+console.log(iterator.next());
+console.log(iterator.next());
+console.log(iterator.next());
+console.log(iterator.next());
+
 /*
-* A generator is a special kind of function that returns an iterator.
-* Generator functions are indicated by inserting a star character (*) after the function
-* keyword (it doesn't matter if the star is directly next to function or if there's some
-* whitespace between them). The yield keyword is used inside of generators to specify the
-* values that the iterator should return when next() is called.
+* In this example, an array is used in a for loop, yielding each item as the loop progresses.
+* Each time yield is encountered, the loop stops, and each time next() is called on iterator,
+* the loop picks back up where it left off.
+
+* Generator functions are an important part of ECMAScript 6, and since they are just functions,
+* they can be used in all the same places.
 *
 * */
-
-function *createIterator() {
-    yield 1;
-    yield 2;
-    yield 3;
-}
-
-let iterator = createIterator();
-
-for ( let i of iterator) {
-    console.log(i);
-}

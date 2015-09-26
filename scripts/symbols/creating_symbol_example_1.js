@@ -1,3 +1,5 @@
-/**
- * Created by pulak on 26/09/15.
- */
+var firstName = Symbol();
+var person = {};
+
+person[firstName] = "Jon";
+console.log(person[firstName]);     // "Jon"

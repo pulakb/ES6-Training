@@ -7,7 +7,4 @@ var person = {};
 
 person[firstName] = "Jon";
 
-console.log("first name" in person);     // "Jon"
-console.log(person[firstName]);
-console.log(firstName);
-console.log(person);
+console.log(typeof firstName);

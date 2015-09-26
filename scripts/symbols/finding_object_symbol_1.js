@@ -1,14 +1,24 @@
 /*
-* When you want to create a symbol to be shared, use the Symbol.for() method instead of calling Symbol().
-* The Symbol.for() method accepts a single parameter, which is a string identifier for the symbol you want
-* to create
+* you can access symbol properties using the Object.getOwnPropertySymbols() method.
+* This method works exactly the same as Object.getOwnPropertyNames() except that the returned
+* values are symbols rather than strings. Since symbols technically aren't property names, they
+* are omitted from the result of Object.getOwnPropertyNames().
 * */
 
 var uid = Symbol.for("uid");
 
-var object = {};
+var object = {
+    [uid]: "12345"
+};
 
-object [uid] = "12345";
+var symbols = Object.getOwnPropertySymbols(object);
 
-console.log(object[uid]);
-console.log(uid);
+console.log(symbols);
+console.log(symbols.length);
+console.log(symbols[0]);
+console.log(object[symbols[0]]);
+
+/*
+* In this code, object has a single symbol property. The array returned from Object.getOwnPropertySymbols()
+* is an array containing just that symbol.
+* */

@@ -1,27 +1,14 @@
 /*
-* You can use symbols anywhere you would use a computed property name. You've already seen the use of
-* bracket notation in the previous sections, but you can use symbols in computed object literal property
-* names as well as with Object.defineProperty(), and Object.defineProperties()
-*
+* When you want to create a symbol to be shared, use the Symbol.for() method instead of calling Symbol().
+* The Symbol.for() method accepts a single parameter, which is a string identifier for the symbol you want
+* to create
 * */
-var firstName = Symbol("first name");
-var person = {
-    [firstName]: "John"
-};
 
-//Read only Property
-Object.defineProperty(person, firstName, {writable: false});
+var uid = Symbol.for("uid");
 
-var lastName = Symbol("last name");
+var object = {};
 
-Object.defineProperties(person, {
-    [lastName] : {
-        value: "deep",
-        writable: false
-    }
-});
+object [uid] = "12345";
 
-
-console.log(person);
-console.log(person[firstName]);
-console.log(person[lastName]);
+console.log(object[uid]);
+console.log(uid);

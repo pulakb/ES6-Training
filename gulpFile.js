@@ -27,6 +27,7 @@ gulp.task('babelify', function() {
 //For running Generator Examples
 gulp.task("generator", function () {
     return gulp.src("scripts/iterators_generators/*.js")
+        .pipe(babel())
         .pipe(regenerator({includeRuntime: true}))
         .pipe(gulp.dest('dist/iterators_generators/'))
 });
