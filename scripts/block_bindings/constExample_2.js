@@ -11,7 +11,7 @@ function constExample () {
         let value = "blue";
     }
 
-    
+    console.log(typeof value);     // "undefined"
 }
 
 constExample();
